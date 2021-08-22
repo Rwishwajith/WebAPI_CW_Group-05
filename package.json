@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Rwishwajith/WebAPI_CW_Group-05/issues"
   },
-  "homepage": "https://github.com/Rwishwajith/WebAPI_CW_Group-05#readme"
+  "homepage": "https://github.com/Rwishwajith/WebAPI_CW_Group-05#readme",
+  "dependencies": {
+    "mongoose": "^5.13.7"
+  }
 }
