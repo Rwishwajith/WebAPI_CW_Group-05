@@ -4,7 +4,8 @@
 
 const mongoose = require('mongoose')
 
-const pizzacartSchema = new.mongoose.Schema({
+const pizzacartSchema = new mongoose.Schema
+({
     orders:
     {
         type: mongoose.Schema.Types.ObjectId, 
