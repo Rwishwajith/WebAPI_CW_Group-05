@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/Rwishwajith/WebAPI_CW_Group-05#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "mongoose": "^5.13.7"
   }
 }
