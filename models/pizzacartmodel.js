@@ -6,8 +6,8 @@ const mongoose = require("mongoose");
 
 const pizzacartSchema = require('../schema/pizzacart').pizzacartSchema
 
-const pizzacart = mongoose.model('PizzaCart',pizzacartSchema)
+const pizzacartmodel = mongoose.model('pizzacartmodel',pizzacartSchema)
 
-exports.pizzacart = pizzacart
+exports.pizzacartmodel = pizzacartmodel
 
 exports.mongoose = mongoose
