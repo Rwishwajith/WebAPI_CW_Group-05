@@ -20,8 +20,15 @@
   },
   "homepage": "https://github.com/Rwishwajith/WebAPI_CW_Group-05#readme",
   "dependencies": {
+    "@google-cloud/storage": "^5.13.2",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.6",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.13.7"
+    "firebase": "^9.0.0",
+    "firebase-admin": "^9.11.1",
+    "mongoose": "^5.13.7",
+    "uuid": "^8.3.2"
   }
 }
