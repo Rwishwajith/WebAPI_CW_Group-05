@@ -12,8 +12,6 @@ app.listen(5000, () =>{
 });
 
 mongoose.connect("mongodb://localhost/Group05-Cartdb", {useNewUrlParser :true, 
-useUnifiedTopology:true}).then(() =>console.log("Successfully Connected to the Database"))
+useUnifiedTopology:true}).then(() =>console.log("Successfully Connected to the Cart Database"))
 .catch((err)=> console.log("Error has occured when connecting to the database",err));
-
-
 
