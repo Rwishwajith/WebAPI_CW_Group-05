@@ -1,0 +1,44 @@
+{
+    "app": {
+        "port": 3000
+    },
+    "mongodb": {
+        "host":"cluster0.d6ced.mongodb.net",
+        "database": "Cluster0",
+        "user": "ruchira",
+        "password":"ruchira123"
+    },
+    "sms":{
+        "userId":"14070",
+        "apiKey":"QHz7cSkUcIePlNWIFzes",
+        "senderId":"NotifyDEMO",
+        "url":"https://app.notify.lk/api/v1/send"
+    },
+    "email":{
+        "email":"ruchiraworld@gmail.com",
+        "name":"pizza-shop-web-api-group-05",
+        "replyEmail":"ruchiraworld@gmail.com",
+        "token":"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",
+        "url":"https://api.sendgrid.com/v3/mail/send"
+    },
+    "mobileValidation":{
+        "url":"http://apilayer.net/api/validate",
+        "apiKey":"b52ef4c16ad96ee08283bcfe5e03c0d9"
+    },
+    "firebase":{
+        "apiKey":"AIzaSyCm5DopTach6IClK3dykXz2MYLkWdrOeiU",
+        "authDomain":"webapi-group05.firebaseapp.com",
+        "projectId":"webapi-group05",
+        "storageBucket":"webapi-group05.appspot.com",
+        "messagingSenderId":"131022451917",
+        "appId":"1:131022451917:web:74e5f257975e93ff43e584",
+        "measurementId":"G-B4Z7DZM78Z"
+    },
+    "accessTokens":{
+        "tokens":["UQMP5plu9ruPcFVswINeLNcyHrDrYEUa","wX2PRd6AhwsKf6OgnqWRVJu6i6jB6yTT","rPE01rd8SEaJSdSsoxjrWZxd7B7ejTqd","YjFOMolrji5kr8M6iicdUsyIPa87aQ3B"],
+        "jwtRsa":"48bb8ba1cacf1ebb14b346b1813af6d5973ca750bb98b12c9faf93e84bfc62ff0cd93f3043d53b06467153441e8b03a24df3b936a9f18e73bbb7263a8f67cb40"
+    },
+    "errors":{
+
+    }
+}
