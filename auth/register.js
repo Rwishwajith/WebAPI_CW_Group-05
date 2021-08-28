@@ -2,6 +2,13 @@
 28.08.2021       Sandaruwani Weerasinghe       Created.
 28.08.2021       Sandaruwani Weerasinghe       Create authentication for New Users.
 */
+
+const userModel = require('../models/user')
+
+const auth = require('../services/firebase').getAuth()
+
+const otp = require('../helpers/otp')
+
 module.exports=((data)=>{
     return new Promise(async(resolve,reject)=>{
         try{
