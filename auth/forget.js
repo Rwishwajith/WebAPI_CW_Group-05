@@ -1,7 +1,16 @@
 /**************LOG HISTORY ***********************
 28.08.2021       Sandaruwani Weerasinghe       Created.
 28.08.2021       Sandaruwani Weerasinghe       Create authentication for forget password.
+28.08.2021       Ruchira Wishwajith             Created the relationships with models, utils and services
 */
+
+const otpModel = require('../models/onetimepassword')
+const userModel = require('../models/user')
+
+const adminAuth = require('../services/firebase').getAdminAuth()
+
+const jwt = require('../utils/jwt')
+
 module.exports=((otpId,rawPassword)=>{
     return new Promise(async(resolve,reject)=>{
 

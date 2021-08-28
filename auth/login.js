@@ -1,7 +1,17 @@
 /**************LOG HISTORY ***********************
 28.08.2021       Sandaruwani Weerasinghe       Created.
 28.08.2021       Sandaruwani Weerasinghe       Create authentication for Login Users.
+28.08.2021       Ruchira Wishwajith            Created the relationships with models, utils and services and helpers
 */
+
+const otp = require('../helpers/otp')
+
+const userModel = require('../models/user')
+
+const jwt = require('../utils/jwt')
+
+const auth = require('../services/firebase').getAuth()
+
 module.exports=((email,password)=>{
     return new Promise(async(resolve,reject)=>{
         try{
