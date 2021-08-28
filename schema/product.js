@@ -2,6 +2,8 @@
 //**************LOG HISTORY ***********************
 //24.08.2021        Ruchira Wishwajith        Created.
 //24.08.2021        Ruchira Wishwajith        Created Scehma for Product
+//28.08.2021        Ruchira Wishwajith        Updated the MainCategory
+
 const mongoose = require('mongoose')
 
 const productSchema = new mongoose.Schema(
@@ -14,7 +16,7 @@ const productSchema = new mongoose.Schema(
     masterCategory:
     {
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'MasterCategory' 
+        ref: 'MainCategory' 
     },
     subCategory:
     {
