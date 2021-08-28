@@ -3,6 +3,9 @@
 //24.08.2021        Ruchira Wishwajith        Created.
 //24.08.2021        Ruchira Wishwajith        Created Scehma for Sub Category
 //28.08.2021        Ruchira Wishwajith        Updated the referance for MainCategory
+//28.08.2021        Ruchira Wishwajith        Added mongoose.model
+
+const mongoose = require('mongoose')
 
 const subCategorySchema = new mongoose.Schema({
     masterCategoryId:{

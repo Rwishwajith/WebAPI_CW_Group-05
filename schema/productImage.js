@@ -2,6 +2,9 @@
 //**************LOG HISTORY ***********************
 //24.08.2021        Ruchira Wishwajith        Created.
 //24.08.2021        Ruchira Wishwajith        Created Scehma for Product Images
+//28.08.2021        Ruchira Wishwajith        Added mongoose.model
+
+const mongoose = require('mongoose')
 
 const productImageSchema = new mongoose.Schema({
     product:{
