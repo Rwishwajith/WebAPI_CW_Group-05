@@ -1,3 +1,7 @@
+//**************LOG HISTORY ***********************
+//28.08.2021       Deshani Rajapaksha       Created.
+//28.08.2021       Deshani Rajapaksha       created a service for Mobile validator.
+
 const config = require('config')
 const axios = require('axios')
 
