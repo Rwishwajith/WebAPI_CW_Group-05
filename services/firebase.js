@@ -1,3 +1,8 @@
+//**************LOG HISTORY ***********************
+//28.08.2021        Ruchira Wishwajith        Created.
+//28.08.2021        Ruchira Wishwajith        Created Services for firebase services
+
+
 let firebase = require('firebase')
 let admin = require("firebase-admin")
 let config = require("config")

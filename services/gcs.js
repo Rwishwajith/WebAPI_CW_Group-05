@@ -1,3 +1,7 @@
+//**************LOG HISTORY ***********************
+//28.08.2021        Ruchira Wishwajith        Created.
+//28.08.2021        Ruchira Wishwajith        Created Services for integration of google cloud services
+
 const bucketRef = require('../services/firebase').getBucket()
 const uuid = require('uuid')
 
