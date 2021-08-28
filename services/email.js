@@ -1,7 +1,7 @@
-//**************LOG HISTORY ***********************
-//28.08.2021        Ruchira Wishwajith        Created.
-//28.08.2021        Ruchira Wishwajith        Created Services for email functionlity
-
+/**************LOG HISTORY ***********************
+28.08.2021        Ruchira Wishwajith        Created.
+28.08.2021        Ruchira Wishwajith        Created Services for email functionlity
+*/
 const config = require('config')
 const axios = require('axios')
 

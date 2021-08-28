@@ -1,8 +1,8 @@
 
-//**************LOG HISTORY ***********************
-//24.08.2021        Ruchira Wishwajith        Created.
-//24.08.2021        Ruchira Wishwajith        Created Model for Product Image
-
+/**************LOG HISTORY ***********************
+24.08.2021        Ruchira Wishwajith        Created.
+24.08.2021        Ruchira Wishwajith        Created Model for Product Image
+*/
 
 const mongoose = require('mongoose')
 
