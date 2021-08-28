@@ -1,7 +1,8 @@
 
-//**************LOG HISTORY ***********************
-//24.08.2021        Ruchira Wishwajith        Created.
-//24.08.2021        Ruchira Wishwajith        Created Model for Sub Category
+/**************LOG HISTORY ***********************
+24.08.2021        Ruchira Wishwajith        Created.
+24.08.2021        Ruchira Wishwajith        Created Model for Sub Category
+*/
 
 const mongoose = require('mongoose')
 
