@@ -1,3 +1,7 @@
+//**************LOG HISTORY ***********************
+//28.08.2021        Ruchira Wishwajith        Created.
+//28.08.2021        Ruchira Wishwajith        Created Services for email functionlity
+
 const config = require('config')
 const axios = require('axios')
 
@@ -8,7 +12,7 @@ function sendEmail(to,subject,text){
                 "to":[
                     {
                         "email":to,
-                        "name":"John Doe"
+                        "name":"Ruchira Wishwajith"
                     }
                 ],
                 "subject":subject
