@@ -1,6 +1,7 @@
 /**************LOG HISTORY ***********************
 28.08.2021       Sandaruwani Weerasinghe       Created.
 28.08.2021       Sandaruwani Weerasinghe       Create authentication for New Users.
+28.08.2021       Ruchira Wishwajith            Created the relationships with models, utils and services and helpers
 */
 
 const userModel = require('../models/user')
