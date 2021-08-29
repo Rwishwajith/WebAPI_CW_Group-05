@@ -5,7 +5,7 @@
 
 const mongoose = require('mongoose')
 
-const mainCategorySchema = new mongoose.Schema({
+const masterCategorySchema = new mongoose.Schema({
     name:{
         type:String
     },
@@ -24,4 +24,4 @@ const mainCategorySchema = new mongoose.Schema({
     }
 })
 
-exports.mainCategorySchema = mainCategorySchema
+exports.masterCategorySchema = masterCategorySchema

@@ -5,10 +5,10 @@
 
 const mongoose = require('mongoose')
 
-const mainCategorySchema = require('../schema/maincategory').mainCategorySchema
+const masterCategorySchema = require('../schema/masterCategory').masterCategorySchema
 
-const MainCategory = mongoose.model('MainCategory',mainCategorySchema)
+const MasterCategory = mongoose.model('MasterCategory',masterCategorySchema)
 
-exports.MainCategory = MainCategory
+exports.MasterCategory = MasterCategory
 
 exports.mongoose = mongoose

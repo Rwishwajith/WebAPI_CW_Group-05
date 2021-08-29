@@ -4,7 +4,7 @@
 
 const mongoose = require('mongoose')
 
-const onetimepasswordSchema = new mongoose.Schema({
+const otpSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User'
@@ -33,4 +33,4 @@ const onetimepasswordSchema = new mongoose.Schema({
     }
 })
 
-exports.onetimepasswordSchema = onetimepasswordSchema
+exports.otpSchema = otpSchema

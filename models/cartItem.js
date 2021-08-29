@@ -6,10 +6,10 @@
 
 const mongoose = require('mongoose')
 
-const itemincartSchema = require('../schema/itemincart').itemincartSchema
+const cartItemSchema = require('../schema/cartItem').cartItemSchema
 
-const itemincart = mongoose.model('itemincart',itemincartSchema)
+const CartItem = mongoose.model('CartItem',cartItemSchema)
 
-exports.itemincart = itemincart
+exports.CartItem = CartItem
 
 exports.mongoose = mongoose

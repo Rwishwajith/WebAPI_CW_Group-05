@@ -5,10 +5,10 @@
 
 const mongoose = require('mongoose')
 
-const pizzacartSchema = require('../schema/pizzacart').pizzacartSchema
+const cartSchema = require('../schema/cart').cartSchema
 
-const pizzacartmodel = mongoose.model('pizzacartmodel',pizzacartSchema)
+const Cart = mongoose.model('Cart',cartSchema)
 
-exports.pizzacartmodel = pizzacartmodel
+exports.Cart = Cart
 
 exports.mongoose = mongoose

@@ -4,14 +4,14 @@
 29.08.2021        Sandaruwani Weerasinghe   Created get all method
 */
 
-const maincategoryModel = require('../models/maincategory')
+const mastercategoryModel = require('../models/mastercategory')
 
 const subCategoryModel = require('../models/subCategory')
 
 function getAll(){
     return new Promise(async(resolve,reject)=>{
         try{
-            let categories = await maincategoryModel.MainCategory.find().populate('subCategory').lean()
+            let categories = await mastercategoryModel.MasterCategory.find().populate('subCategory').lean()
 
             categories['child']=categories['subCategory']
             delete categories['subCategory']
