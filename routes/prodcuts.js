@@ -4,14 +4,26 @@
 28.08.2021        Ruchira Wishwajith        Updated the paths
 29.08.2021        Deshani Rajapaksha        Created POST method fro products
 29.08.2021        Ruchira Wishwajith        Added return method to rerturn routes
-29.08.2021        Ruchira Wishwajith        Added Get/vendor/Id method
+29.08.2021        Ruchira Wishwajith        Added Get/vendor/Id method  
+29.08.2021        sandaruwani Weerasinghe   Get all method for product
 */
 
 
 module.exports = (()=>{
-
     let routes = require('express').Router()
+    routes.get('/',(request, respond)=>{
+        try{
+            let params = request.query!=={}?request.query:undefined
 
+            product.getAll(params).then((products)=>{
+                return respond.status(200).send({success:true,message:'Products successfully fetched',error:null,code:200,data:products})
+            }).catch((e)=>{
+                return respond.status(200).send({success:false,message:e.message,error:e.error,code:e.code,data:e.data})
+            })
+        }catch(e){
+            return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,code:500,data:null})
+        }
+    })
 
 
     routes.get('/vendor/:id',(request, respond)=>{
