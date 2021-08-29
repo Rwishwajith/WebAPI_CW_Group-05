@@ -3,10 +3,20 @@
 29.08.2021        Deshani Rajapaksha        Created POST Method to add Orders.
 29.08.2021        Ruchira Wishwajith        Created GET method to retrive user's orders
 29.08.2021        Ruchira Wishwajith        Created GET method to retrive orders
+29.08.2021        Sandaruwani Weerasinghe   Created get method to retrive all orders
 */
 
-
-
+routes.get('/',jwtMiddleware,checkAdminPermissions,(request, respond)=>{
+    try{
+        order.getAll().then((orders)=>{
+            return respond.status(200).send({success:true,message:'Orders successfully fetched',error:null,code:200,data:orders})
+        }).catch((e)=>{
+            return respond.status(200).send({success:false,message:e.message,error:e.error,code:e.code,data:e.data})
+        })
+    }catch(e){
+        return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,code:500,data:null})
+    }
+})
 
     
     routes.get('/user/',jwtMiddleware,(request, respond)=>{
