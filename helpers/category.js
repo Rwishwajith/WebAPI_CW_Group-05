@@ -5,7 +5,9 @@
 */
 
 const maincategoryModel = require('../models/maincategory')
+
 const subCategoryModel = require('../models/subCategory')
+
 function getAll(){
     return new Promise(async(resolve,reject)=>{
         try{
