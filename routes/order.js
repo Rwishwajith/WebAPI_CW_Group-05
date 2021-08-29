@@ -6,6 +6,7 @@
 29.08.2021        Sandaruwani Weerasinghe   Created get method to retrive all orders
 */
 
+
 routes.get('/',jwtMiddleware,checkAdminPermissions,(request, respond)=>{
     try{
         order.getAll().then((orders)=>{
