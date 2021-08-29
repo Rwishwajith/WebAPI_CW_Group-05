@@ -1,6 +1,8 @@
-//**************LOG HISTORY ***********************
-//28.08.2021        Ruchira Wishwajith        Created.
-//28.08.2021        Ruchira Wishwajith        Created Middlewares Universal Access Identfier
+/**************LOG HISTORY ***********************
+28.08.2021        Ruchira Wishwajith        Created.
+28.08.2021        Ruchira Wishwajith        Created Middlewares Universal Access Identfier
+29.08.2021       Ruchira Wishwajith         Code Refactoring
+*/
 
 const multer = require('multer')
 const uuid = require('uuid')

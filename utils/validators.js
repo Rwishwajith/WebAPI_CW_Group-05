@@ -1,7 +1,8 @@
-//**************LOG HISTORY ***********************
-//28.08.2021       Sandaruwani Weerasinghe       Created.
-//28.08.2021       Sandaruwani Weerasinghe       added validators.
-
+/**************LOG HISTORY ***********************
+28.08.2021       Sandaruwani Weerasinghe       Created.
+28.08.2021       Sandaruwani Weerasinghe       added validators.
+29.08.2021       Ruchira Wishwajith            Code Refactoring
+*/
 const mobileValidate = require('../services/mobileValidate')
 
 function validatePassword(password){
