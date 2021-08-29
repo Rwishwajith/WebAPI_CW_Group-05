@@ -5,10 +5,10 @@
 
 const mongoose = require('mongoose')
 
-const ordersSchema = require('../schema/orders').ordersSchema
+const orderSchema = require('../schema/order').orderSchema
 
-const Orders = mongoose.model('Orders',ordersSchema)
+const Order = mongoose.model('Order',orderSchema)
 
-exports.Orders = Orders
+exports.Order = Order
 
 exports.mongoose = mongoose

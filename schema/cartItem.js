@@ -5,31 +5,27 @@
 
 const mongoose = require('mongoose')
 
-const itemincartSchema = new mongoose.Schema({
-    cart:
-    {
+const cartItemSchema = new mongoose.Schema({
+    cart:{
         type: mongoose.Schema.Types.ObjectId,
         ref:'Cart'
     },
     product: {
         type: mongoose.Schema.Types.ObjectId,
-        ref:'Products'
+        ref:'Product'
     },
-    qty:
-    {
+    qty:{
         type:Number,
         default:0
     },
-    createdAt:
-    {
+    createdAt: {
         type:Date,
         default:Date()
     },
-    updatedAt: 
-    {
+    updatedAt: {
         type:Date,
         default:Date()
     }
 })
 
-exports.itemincartSchema = itemincartSchema
+exports.cartItemSchema = cartItemSchema

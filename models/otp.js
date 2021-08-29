@@ -5,8 +5,8 @@
 
 const mongoose = require('mongoose')
 
-const onetimepasswordSchema = require('../schema/onetimepassword').onetimepasswordSchema
+const otpSchema = require('../schema/otp').otpSchema
 
-exports.onetimepasswordSchema = mongoose.model('OneTimePassword',onetimepasswordSchema)
+exports.Otp = mongoose.model('Otp',otpSchema)
 
 exports.mongoose = mongoose

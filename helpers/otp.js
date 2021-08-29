@@ -11,7 +11,7 @@ const sms = require('../services/sms')
 const email = require('../services/email')
 
 const userModel = require('../models/user')
-const otpModel = require('../models/onetimepassword')
+const otpModel = require('../models/otp')
 
 const moment = require('moment')
 

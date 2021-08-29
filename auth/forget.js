@@ -4,7 +4,7 @@
 28.08.2021       Ruchira Wishwajith             Created the relationships with models, utils and services
 */
 
-const otpModel = require('../models/onetimepassword')
+const otpModel = require('../models/otp')
 const userModel = require('../models/user')
 
 const adminAuth = require('../services/firebase').getAdminAuth()
