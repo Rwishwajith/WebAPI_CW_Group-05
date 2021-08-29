@@ -1,7 +1,8 @@
-//**************LOG HISTORY ***********************
-//28.08.2021        Ruchira Wishwajith        Created.
-//28.08.2021        Ruchira Wishwajith        Created Middlewares for Permission Checker
-
+/**************LOG HISTORY ***********************
+28.08.2021        Ruchira Wishwajith        Created.
+28.08.2021        Ruchira Wishwajith        Created Middlewares for Permission Checker
+29.08.2021       Ruchira Wishwajith         Code Refactoring
+*/
 
 const jwt = require('../utils/jwt')
 

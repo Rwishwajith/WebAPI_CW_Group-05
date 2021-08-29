@@ -1,6 +1,8 @@
-//**************LOG HISTORY ***********************
-//28.08.2021       Deshani Rajapaksha       Created.
-//28.08.2021       Deshani Rajapaksha       Added Universal Unique Identifier 
+/**************LOG HISTORY ***********************
+28.08.2021       Deshani Rajapaksha       Created.
+28.08.2021       Deshani Rajapaksha       Added Universal Unique Identifier 
+29.08.2021       Ruchira Wishwajith       Code Refactoring
+*/
 
 const uuid = require('uuid')
 

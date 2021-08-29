@@ -1,7 +1,8 @@
-//**************LOG HISTORY ***********************
-//28.08.2021       Deshani Rajapaksha       Created.
-//28.08.2021       Deshani Rajapaksha       created a function to return Time Differance.
-
+/**************LOG HISTORY ***********************
+28.08.2021       Deshani Rajapaksha       Created.
+28.08.2021       Deshani Rajapaksha       created a function to return Time Differance.
+29.08.2021       Ruchira Wishwajith       Code Refactoring
+*/
 
 var timediff = require('timediff')
 

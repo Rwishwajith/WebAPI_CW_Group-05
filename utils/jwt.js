@@ -1,7 +1,8 @@
-//**************LOG HISTORY ***********************
-//28.08.2021       Deshani Rajapaksha       Created.
-//28.08.2021       Deshani Rajapaksha       Added Json Access Token
-
+/**************LOG HISTORY ***********************
+28.08.2021       Deshani Rajapaksha       Created.
+28.08.2021       Deshani Rajapaksha       Added Json Access Token
+29.08.2021       Ruchira Wishwajith       Code Refactoring
+*/
 const config = require('config')
 const jwt = require('jsonwebtoken')
 const jwtrsa = config.get('accessTokens.jwtRsa')

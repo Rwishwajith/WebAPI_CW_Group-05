@@ -1,7 +1,8 @@
-//**************LOG HISTORY ***********************
-//28.08.2021        Ruchira Wishwajith        Created.
-//28.08.2021        Ruchira Wishwajith        Created Middlewares for Access Token
-
+/**************LOG HISTORY ***********************
+28.08.2021        Ruchira Wishwajith        Created.
+28.08.2021        Ruchira Wishwajith        Created Middlewares for Access Token
+29.08.2021        Ruchira Wishwajith         Code Refactoring
+*/
 
 const configs = require('config')
 const jwtrsa = configs.get('accessTokens.jwtRsa')
