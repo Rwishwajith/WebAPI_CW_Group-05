@@ -37,7 +37,9 @@
     "moment": "^2.29.1",
     "mongoose": "^5.13.8",
     "multer": "^1.4.3",
+    "nodemailer": "^6.6.3",
+    "request": "^2.88.2",
     "timediff": "^1.1.1",
-    "uuid": "^8.3.2"
+    "uuid": "^7.0.3"
   }
 }
