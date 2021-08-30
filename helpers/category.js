@@ -5,6 +5,7 @@
 30.08.2021        Deshani Rajapaksha        Created a POST method to add Main Category.
 30.08.2021        Deshani Rajapaksha        Created a POST method to add Sub Category.
 30.08.2021        Ruchira Wishwajith        Renamed function addNewMainCategory ----> addNewMasterCategory
+31.08.2021        Ruchira Wishwajith        Export functions
 */
 
 const mastercategoryModel = require('../models/mastercategory')
@@ -78,3 +79,7 @@ function addNewSubCategory(masterCategoryId,SubCategoryName){
         }
     })
 }
+
+exports.getAll = getAll
+exports.addNewMasterCategory = addNewMasterCategory
+exports.addNewSubCategory = addNewSubCategory
