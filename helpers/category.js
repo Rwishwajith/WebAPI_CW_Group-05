@@ -23,20 +23,20 @@ function getAll(){
     })
 }
 
-function addNewMainCategory(name){
+function addNewMasterCategory(name){
     return new Promise(async(resolve,reject)=>{
         try{
-            let isExist = await mainCategoryModel.MainCategory.count({name:name}) == 0?false:true
+            let isExist = await masterCategoryModel.MasterCategory.count({name:name}) == 0?false:true
 
             if(isExist)
                 return reject({message:"Category already exists",error:e.message,code:409,data:null})
 
-            let masterCategory = new mainCategoryModel.MainCategory({
+            let masterCategory = new masterCategoryModel.MainCategory({
                 name:name
             })
 
-            mainCategory.save().then((res)=>{
-                return resolve({mainCategoryId:mainCategory._id})
+            masterCategory.save().then((res)=>{
+                return resolve({masterCategoryId:masterCategory._id})
             }).catch((e)=>{return reject({message:"Unable to save to database",error:e.message,code:500,data:null})})
         }catch(e){
             return reject({message:"Undetected error",error:e.message,code:500,data:null})
