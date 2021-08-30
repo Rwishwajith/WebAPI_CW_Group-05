@@ -16,6 +16,9 @@ function getAll(){
     })
 }
 
+
+
+
 function addNewVendor(data){
     return new Promise(async(resolve,reject)=>{
         try{
