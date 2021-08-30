@@ -2,7 +2,10 @@
 29.08.2021        Ruchira Wishwajith        Created.
 29.08.2021        Ruchira Wishwajith        Created OTP verification failed POST Method
 30.08.2021        Deshani Rajapaksha        Created POST Method for verify Validators.
+31.08.2021        Ruchira Wishwajith        Created relatuionships with Helpers nad Utils
 */
+const otp = require('../helpers/otp')
+const validator = require('../utils/validators')
 
 module.exports = (()=>{
 
