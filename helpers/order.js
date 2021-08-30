@@ -7,6 +7,7 @@
 30.08.2021        Deshani Rajapaksha        Added function to  addOne(data)updateOne(data)
 30.08.2021        Ruchira Wishwajith        Added function to updateOne(data)
 30.08.2021        Ruchira Wishwajith        Code Refctoring
+31.08.2021        Ruchira Wishwajith        Exported the functions
 
 */
 const orderModel = require('../models/order')
@@ -202,5 +203,3 @@ exports.getOneForUser=getOneForUser
 exports.getOne = getOne
 exports.addOne = addOne
 exports.updateOne = updateOne
-exports.deleteAll = deleteAll
-exports.deleteOne = deleteOne
