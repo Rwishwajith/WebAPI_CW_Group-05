@@ -4,6 +4,7 @@
 29.08.2021        Sandaruwani Weerasinghe   Created get all method
 30.08.2021        Deshani Rajapaksha        Created a POST method to add Main Category.
 30.08.2021        Deshani Rajapaksha        Created a POST method to add Sub Category.
+30.08.2021        Ruchira Wishwajith        Renamed function addNewMainCategory ----> addNewMasterCategory
 */
 
 const mastercategoryModel = require('../models/mastercategory')
@@ -44,6 +45,7 @@ function addNewMasterCategory(name){
         }
     })
 }
+
 function addNewSubCategory(masterCategoryId,SubCategoryName){
     return new Promise(async(resolve,reject)=>{
         try{
