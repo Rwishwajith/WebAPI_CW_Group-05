@@ -13,7 +13,7 @@ class GCS{
     uploadImage(filePath){
       return new Promise((resolve,reject)=>{
         this.bucket.upload('./temp/'+filePath).then((res)=>{
-          let downloadableUrl = 'https://firebasestorage.googleapis.com/v0/b/webapi-3e0ee.appspot.com/o/' + encodeURIComponent(filePath) + '?alt=media&token=' + uuid.v4()
+          let downloadableUrl = 'https://firebasestorage.googleapis.com/v0/b/webapi-group05.appspot.com/o/Eq_it-na_pizza-margherita_sep2005_sml.jpg?alt=media&token=399ed14c-9940-4a0a-ac1d-765d07fb312e' + encodeURIComponent(filePath) + '?alt=media&token=' + uuid.v4()
           return resolve(downloadableUrl)
         }).catch((e)=>{
           return reject(e.message)
