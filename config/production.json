@@ -29,7 +29,7 @@
         "apiKey":"AIzaSyCm5DopTach6IClK3dykXz2MYLkWdrOeiU",
         "authDomain":"webapi-group05.firebaseapp.com",
         "projectId":"webapi-group05",
-        "storageBucket":"webapi-group05.appspot.com",
+        "storageBucket":"gs://webapi-group05.appspot.com",
         "messagingSenderId":"131022451917",
         "appId":"1:131022451917:web:74e5f257975e93ff43e584",
         "measurementId":"G-B4Z7DZM78Z"
