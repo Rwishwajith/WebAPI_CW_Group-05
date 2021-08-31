@@ -9,7 +9,8 @@
 01.08.2021        Pabasara Illangasekara    Added Delete Sub Category
 01.08.2021        Pabasara Illangasekara    Added Delete Master Category
 01.08.2021        Ruchira Wishwajith        Added export exports.deleteSubCategory = deleteSubCategory
-
+01.08.2021        Ruchira Wishwajith        Added export exports.deleteMasterCategory = deleteMasterCategory
+*/
 
 const mastercategoryModel = require('../models/mastercategory')
 
@@ -124,3 +125,4 @@ exports.getAll = getAll
 exports.addNewMasterCategory = addNewMasterCategory
 exports.addNewSubCategory = addNewSubCategory
 exports.deleteSubCategory = deleteSubCategory
+exports.deleteMasterCategory = deleteMasterCategory
