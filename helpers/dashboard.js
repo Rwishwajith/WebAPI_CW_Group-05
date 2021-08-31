@@ -6,8 +6,11 @@
 
 
 const userModel = require('../models/user')
+
 const productModel = require('../models/product')
+
 const orderModel = require('../models/order')
+
 const vendorModel = require('../models/vendor')
 
 function getAll(){
@@ -20,7 +23,9 @@ function getAll(){
             let orderCount = await orderModel.Order.countDocuments()
             let orderPendingCount = await orderModel.Order.countDocuments({status:0})
             let orderAcceptCount = await orderModel.Order.countDocuments({status:1})
- 
+            let orderProcessingCount = await orderModel.Order.countDocuments({status:2})
+            let orderShippedCount = await orderModel.Order.countDocuments({status:3})
+            let orderCompleteCount = await orderModel.Order.countDocuments({status:4})
 
             let data = {
                 vendorCount:vendorCount,
@@ -30,6 +35,9 @@ function getAll(){
                 orderCount:orderCount,
                 orderPendingCount:orderPendingCount,
                 orderAcceptCount:orderAcceptCount,
+                orderProcessingCount:orderProcessingCount,
+                orderShippedCount:orderShippedCount,
+                orderCompleteCount:orderCompleteCount
            
             }
 
@@ -39,3 +47,4 @@ function getAll(){
         }
     })
 }
+exports.getAll = getAll
