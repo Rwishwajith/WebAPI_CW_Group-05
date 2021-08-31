@@ -1,8 +1,14 @@
-const express = require('express');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const products = require("./routes/prodcuts");
-const app = express();
+const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const config = require('config')
+const mongoose = require('mongoose')
+const path = require('path')
+
+const firebaseService = require("./services/firebase")
+
+
+const port = process.env.PORT || config.get('app.port') 
 
 app.use(express.json());
 
