@@ -6,6 +6,7 @@
 29.08.2021        Ruchira Wishwajith        Added return method to rerturn routes
 29.08.2021        Ruchira Wishwajith        Added Get/vendor/Id method  
 29.08.2021        sandaruwani Weerasinghe   Get all method for product
+31.08.2021        Ruchira Wishwajith        Created GET(ID) method
 */
 
 
@@ -42,6 +43,24 @@ module.exports = (()=>{
             return respond.status(500).send({success:false,message:'Unexpected error occured',error:e.message,code:500,data:null})
         }
     })
+
+    routes.get('/:id',(request, respond)=>{
+        try{
+            let productId = request.params.id
+
+            if(!validator.validateEmptyFields(productId))
+                return respond.status(200).send({success:false,message:'Missing or empty required fields',error:null,code:400,data:null})
+
+            product.getOne(productId).then((products)=>{
+                return respond.status(200).send({success:true,message:'Product successfully fetched',error:null,code:200,data:products})
+            }).catch((e)=>{
+                return respond.status(200).send({success:false,message:e.message,error:e.error,code:e.code,data:e.data})
+            })
+        }catch(e){
+            return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,code:500,data:null})
+        }
+    })
+
 
     routes.post('/',jwtMiddleware,checkAdminPermissions,upload.array('images'),(request, respond)=>{
         try{
