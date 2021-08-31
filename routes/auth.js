@@ -4,13 +4,19 @@
 31.08.2021        Deshani Rajapaksha        Created POST Method for Register Request.
 31.08.2021        Ruchira Wishwajith        Added the reuired auth and helpers
 31.08.2021        Deshani Rajapaksha        Created POST Method for Forget Request.
+01.08.2021        Ruchira Wishwajith        Code Refactoring
+01.08.2021        Ruchira Wishwajith        Added relationships to helpers,auth,middlwares,utils
 */
 
 const login = require('../auth/login')
 const register = require('../auth/register')
 const forget = require('../auth/forget')
-
 const otp = require('../helpers/otp')
+const otp = require('../helpers/otp')
+const jwtMiddleware = require('../middlewares/jwt').checkJWT
+const checkAdminPermissions = require('../middlewares/permissionCheck').checkAdminPermissions
+const validator = require('../utils/validators')
+
 
 routes.post('/login',(request, respond)=>{
     try{
