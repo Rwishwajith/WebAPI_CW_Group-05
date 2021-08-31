@@ -5,6 +5,7 @@
 29.08.2021        Ruchira Wishwajith        Created GET method to retrive orders
 29.08.2021        Sandaruwani Weerasinghe   Created get method to retrive all orders
 29.08.2021        Ruchia Wishwajith         Created PUT method to update orders
+31.08.2021        Ruchira Wishwajith        Created Get method using ID
 */
 
     routes.get('/',jwtMiddleware,checkAdminPermissions,(request, respond)=>{
@@ -50,6 +51,25 @@
             return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,code:500,data:null})
         }
     })
+
+    routes.get('/:id',jwtMiddleware,checkAdminPermissions,(request, respond)=>{
+        try{
+            let orderId = request.params.id
+
+            if(!validator.validateEmptyFields(orderId))
+                return respond.status(200).send({success:false,message:'Missing or empty required fields',error:null,code:400,data:null})
+
+            order.getOne(orderId).then((order)=>{
+                return respond.status(200).send({success:true,message:'Order successfully fetched',error:null,code:200,data:order})
+            }).catch((e)=>{
+                return respond.status(200).send({success:false,message:e.message,error:e.error,code:e.code,data:e.data})
+            })
+        }catch(e){
+            return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,code:500,data:null})
+        }
+    })
+
+
 
     routes.post('/',jwtMiddleware,(request, respond)=>{
         try{
