@@ -1,7 +1,7 @@
 /**************LOG HISTORY ***********************
 28.08.2021       Sandaruwani Weerasinghe       Created.
 28.08.2021       Sandaruwani Weerasinghe       Create authentication for forget password.
-28.08.2021       Ruchira Wishwajith             Created the relationships with models, utils and services
+28.08.2021       Ruchira Wishwajith            Created the relationships with models, utils and services
 */
 
 const otpModel = require('../models/otp')
