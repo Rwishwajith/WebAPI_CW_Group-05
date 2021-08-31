@@ -2,6 +2,7 @@
 28.08.2021        Ruchira Wishwajith        Created the file.
 28.08.2021        Ruchira Wishwajith        Created relationships with user,product, order and vendor models
 31.08.2021        Sandaruwani Weerasinghe   Created get method for dashboard
+01.08.2021        Ruchira Wishwajith        Added Missing Vaiables
 */
 
 
