@@ -7,6 +7,7 @@
 30.08.2021        Ruchira Wishwajith        Renamed function addNewMainCategory ----> addNewMasterCategory
 31.08.2021        Ruchira Wishwajith        Export functions
 01.08.2021        Pabasara Illangasekara    Added Delete Sub Category
+01.08.2021        Ruchira Wishwajith        Added export exports.deleteSubCategory = deleteSubCategory
 */
 
 const mastercategoryModel = require('../models/mastercategory')
@@ -99,3 +100,4 @@ function addNewSubCategory(masterCategoryId,SubCategoryName){
 exports.getAll = getAll
 exports.addNewMasterCategory = addNewMasterCategory
 exports.addNewSubCategory = addNewSubCategory
+exports.deleteSubCategory = deleteSubCategory
