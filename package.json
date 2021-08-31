@@ -23,8 +23,11 @@
     "@google-cloud/storage": "^5.13.2",
     "@sendgrid/mail": "^7.4.6",
     "@types/uuid": "^8.3.1",
+    "autoprefixer": "^9.8.0",
     "axios": "^0.21.1",
+    "bedrock-protocol": "github:PrismarineJS/bedrock-protocol",
     "body-parser": "^1.19.0",
+    "colorette": "^1.2.0",
     "config": "^3.3.6",
     "cors": "^2.8.5",
     "express": "^4.17.1",
@@ -44,5 +47,8 @@
     "request": "^2.88.2",
     "timediff": "^1.1.1",
     "uuid": "^7.0.3"
+  },
+  "devDependencies": {
+    "@babel/helper-compilation-targets": "^7.15.0"
   }
 }
