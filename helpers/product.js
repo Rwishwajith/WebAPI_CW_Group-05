@@ -3,7 +3,7 @@
 29.08.2021        Ruchira Wishwajith        Added GetOne(productId) method
 30.08.2021        Ruchira Wishwajith        Created GET Method for Vendor
 30.08.2021        Deshani Rajapaksha        Created a POST method for Add One Function.
-
+31.08.2021        Sandaruwani Weerasinghe   Created get all method for product.
 */
 
 
@@ -34,6 +34,36 @@ function getOne(productId){
 
             return resolve(product)
 
+        }catch(e){
+            return reject({message:"Undetected error",error:e.message,code:500,data:null})
+        }
+    })
+}
+
+function getAll(params=undefined){
+    return new Promise(async(resolve,reject)=>{
+        try{
+            let query = {}
+            let keywordFilter = {}
+
+            if(params){
+                let filters = {$or:[]}
+                for (const [key, value] of Object.entries(params)) {
+                    if(key==="keyword" && value!='""' && value!="undefined" && value!='"undefined"'){
+                        keywordFilter={ $text: { $search: value } }
+                    }
+                    if(key!="keyword"){
+                        filter = {}
+                        filter[key]=value 
+                        filters['$or'].push(filter)
+                    }
+                }
+                query=filters['$or'].length===0?{}:filters
+            }
+
+            let products = await productModel.Product.find({$and:[query,keywordFilter]}).populate('images','imageUrl')
+
+            return resolve(products)
         }catch(e){
             return reject({message:"Undetected error",error:e.message,code:500,data:null})
         }
