@@ -118,6 +118,7 @@ function deleteMasterCategory(masterCategoryId){
     })
 }
 
+
 exports.getAll = getAll
 exports.addNewMasterCategory = addNewMasterCategory
 exports.addNewSubCategory = addNewSubCategory
