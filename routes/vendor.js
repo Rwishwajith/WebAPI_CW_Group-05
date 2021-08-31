@@ -1,8 +1,20 @@
 /**************LOG HISTORY ***********************
 29.08.2021        Ruchira Wishwajith        Created.
 30.08.2021        Deshani Rajapaksha        Created POST Method for Vendors.
+31.08.2021        Sandaruwani Weerasinghe   Create get method for vendors
 */
 
+routes.get('/',(request, respond)=>{
+    try{
+        vendor.getAll().then((vendors)=>{
+            return respond.status(200).send({success:true,message:'Vendors successfully fetched',error:null,code:200,data:vendors})
+        }).catch((e)=>{
+            return respond.status(200).send({success:false,message:e.message,error:e.error,code:e.code,data:e.data})
+        })
+    }catch(e){
+        return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,data:null})
+    }
+})
 
 routes.post('/',jwtMiddleware,checkAdminPermissions,uploadMulter.array('logo', 1),(request, respond)=>{
     try{
