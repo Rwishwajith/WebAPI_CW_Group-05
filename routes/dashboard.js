@@ -1,8 +1,13 @@
 /**************LOG HISTORY ***********************
 29.08.2021        Ruchira Wishwajith        Created.
 29.08.2021        Ruchira Wishwajith        Created GET Method
+01.08.2021        Ruchira Wishwajith        Added relationship with gelpers,middlewares
 */
 
+const dashboard = require('../helpers/dashboard')
+
+const jwtMiddleware = require('../middlewares/jwt').checkJWT
+const checkAdminPermissions = require('../middlewares/permissionCheck').checkAdminPermissions
 
 module.exports = (()=>{
 
