@@ -3,6 +3,7 @@
 29.08.2021        Deshani Rajapaksha        Created POST Method for Login Request.
 31.08.2021        Deshani Rajapaksha        Created POST Method for Register Request.
 31.08.2021        Ruchira Wishwajith        Added the reuired auth and helpers
+31.08.2021        Deshani Rajapaksha        Created POST Method for Forget Request.
 */
 
 const login = require('../auth/login')
@@ -83,5 +84,30 @@ const otp = require('../helpers/otp')
             })
         }catch(e){
             return respond.status(500).send({successfalse,message'Unexpected error occurs',errore.message,code500,datanull})
+        }
+    })
+
+    routes.post('/forget',(request, respond)=>{
+        try{
+            let otpId = request.body.otpId
+            let password = request.body.password
+            let passwordConfirm = request.body.passwordConfirm
+    
+            if(!validator.validateEmptyFields(otpId,password,passwordConfirm))
+                return respond.status(200).send({success:false,message:'Missing or empty required fields',error:null,code:400,data:null})
+                
+            if(!validator.validateConfirmPassword(password,passwordConfirm))
+                return respond.status(200).send({success:false,message:'Passwords not matching',error:null,code:400,data:null})
+    
+            if(!validator.validatePassword(password))
+                return respond.status(200).send({success:false,message:'Password mot matching security criteria',error:null,code:400,data:null})
+    
+            forget(otpId,password).then((result)=>{
+                return respond.status(200).send({success:true,message:'Password successfully changed',error:null,code:200,data:result})
+            }).catch((e)=>{
+                return respond.status(200).send({success:false,message:e.message,error:e.error,code:e.code,data:e.data})
+            })
+        }catch(e){
+            return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,code:500,data:null})
         }
     })
