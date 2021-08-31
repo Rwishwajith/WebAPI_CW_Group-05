@@ -6,6 +6,7 @@
 30.08.2021        Deshani Rajapaksha        Created a POST method to add Sub Category.
 30.08.2021        Ruchira Wishwajith        Renamed function addNewMainCategory ----> addNewMasterCategory
 31.08.2021        Ruchira Wishwajith        Export functions
+01.08.2021        Pabasara Illangasekara    Added Delete Sub Category
 */
 
 const mastercategoryModel = require('../models/mastercategory')
@@ -79,6 +80,21 @@ function addNewSubCategory(masterCategoryId,SubCategoryName){
         }
     })
 }
+    function deleteSubCategory(subCategoryId){
+        return new Promise(async(resolve,reject)=>{
+            try{
+                let subCategory = await subCategoryModel.SubCategory.deleteOne({_id:new subCategoryModel.mongoose.Types.ObjectId(subCategoryId)})
+
+                if(!subCategory)
+                    return reject({message:null,error:"Invalid sub category ID",code:404,data:null})
+
+                return resolve(subCategoryId)
+                
+            }catch(e){
+                return reject({message:"Undetected error",error:e.message,code:500,data:null})
+            }
+        })
+    }
 
 exports.getAll = getAll
 exports.addNewMasterCategory = addNewMasterCategory
