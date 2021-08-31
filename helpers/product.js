@@ -4,6 +4,7 @@
 30.08.2021        Ruchira Wishwajith        Created GET Method for Vendor
 30.08.2021        Deshani Rajapaksha        Created a POST method for Add One Function.
 31.08.2021        Sandaruwani Weerasinghe   Created get all method for product.
+01.09.2021        Ruchira Wishwajith        Created Updateone(PUT) function
 */
 
 
@@ -115,6 +116,65 @@ function addOne(data){
 
         }catch(e){
             return reject({message:"Undetected error",error:e.message,code:500,data:null})
+        }
+    })
+}
+
+
+function updateOne(data){
+    return new Promise(async(resolve,reject)=>{
+        try{
+            let imageObj = []
+
+            let product=await productModel.Product.findOne({_id:new productModel.mongoose.Types.ObjectId(data.productId)})
+
+            if(!product)
+                return reject({message:null,error:'Unable to find product',code:404,data:null})
+
+            product.vendor=new productModel.mongoose.Types.ObjectId(data.vendorId),
+            product.masterCategory=new productModel.mongoose.Types.ObjectId(data.masterCategoryId),
+            product.subCategory=new productModel.mongoose.Types.ObjectId(data.subCategoryId),
+            product.name=data.name,
+            product.description=data.description,
+            product.price=data.price,
+            product.discount=data.discount,
+            product.isAvailable=data.isAvailable,
+            product.status=data.status
+
+            let deletedImages = JSON.parse(data.deletedImages)
+
+            console.log(deletedImages)
+            console.log(data.images)
+
+            await new Promise(async(resolve, reject) => {
+                for(const deletedImage of deletedImages){
+                    await productImageModel.ProductImage.deleteOne({_id:new productImageModel.mongoose.Types.ObjectId(deletedImage)})
+                    if(product.images.length!=0){  
+                        product.images = product.images.filter(image => image != deletedImage)
+                    }
+                }
+
+                for(const image of data.images){
+                    let downloadUrl = await gcsRef.uploadImage(image).catch((e)=>{})
+                    let productImage = new productImageModel.ProductImage({
+                        product:new productModel.mongoose.Types.ObjectId(product._id),
+                        imageUrl:downloadUrl,
+                    })
+                    await productImage.save()
+
+                    product.images.push(productImage)
+                }
+                return resolve(true)
+            })
+
+            product.save().then((res)=>{
+                return resolve("Product successfully saved")
+            }).catch((e)=>{
+                return reject({message:"Unable to save to database",error:e.message,code:500,data:null})
+            })
+            
+        }catch(e){
+            return reject({message:"Undetected error",error:e.message,code:500})
         }
     })
 }
