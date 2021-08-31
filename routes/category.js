@@ -1,7 +1,7 @@
 /**************LOG HISTORY ***********************
 29.08.2021        Ruchira Wishwajith        Created.
 29.08.2021        Ruchira Wishwajith        Created GET Method to fecth categories
-31.08.2021        Deshani Rajapaksha        Created a POST Method for MasterCategory
+31.08.2021        Deshani Rajapaksha        Created a POST Method to fetch Cate
 */
 
 
