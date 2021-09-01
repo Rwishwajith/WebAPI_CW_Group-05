@@ -211,6 +211,23 @@ function deleteAll(){
     })
     }
 
+    function deleteOne(orderId){
+        return new Promise(async(resolve,reject)=>{
+            try{
+                orderModel.Order.deleteOne({_id:new orderModel.mongoose.Types.ObjectId(orderId)}).then(res=>{
+                    cartModel.Cart.deleteOne({order:new orderModel.mongoose.Types.ObjectId(orderId)}).then((res)=>{
+                        cartItemModel.CartItem.deleteMany({cart:new cartModel.mongoose.Types.ObjectId(res._id)}).then((res)=>{
+                            return resolve(true)
+                        }).catch((e)=>{return reject({message:"Unable to delete",error:e.message,code:500,data:null})})
+                    }).catch((e)=>{return reject({message:"Unable to delete",error:e.message,code:500,data:null})})
+                }).catch((e)=>{return reject({message:"Unable to delete",error:e.message,code:500,data:null})})
+    
+            }catch(e){
+                return reject({message:"Undetected error",error:e.message,code:500,data:null})
+            }
+        })
+    }
+
 exports.getAll = getAll
 exports.getAllForUser=getAllForUser
 exports.getOneForUser=getOneForUser
