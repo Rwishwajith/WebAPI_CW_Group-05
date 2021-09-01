@@ -230,6 +230,7 @@ function deleteAll(){
             }
         })
     }
+    
 
 exports.getAll = getAll
 exports.getAllForUser=getAllForUser
