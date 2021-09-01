@@ -178,3 +178,19 @@ function updateOne(data){
         }
     })
 }
+
+
+function deleteAll(){
+    return new Promise(async(resolve,reject)=>{
+        try{
+            await productModel.Product.deleteMany().then(res=>{
+                productImageModel.ProductImage.deleteMany({product:new productModel.mongoose.Types.ObjectId(res._id)}).then((res)=>{
+                    return resolve(true)
+                })
+            }).catch((e)=>{return reject({message:"Unable to delete",error:e.message,code:500,data:null})})
+
+        }catch(e){
+            return reject({message:"Undetected error",error:e.message,code:500,data:null})
+        }
+    })
+}
