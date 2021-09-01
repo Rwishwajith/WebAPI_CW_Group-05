@@ -40,3 +40,22 @@ function addNewVendor(data){
         }
     })
 }
+
+
+function deleteVendor(vendorId){
+    return new Promise(async(resolve,reject)=>{
+        try{
+            let vendor = await vendorModel.Vendor.findOne({_id:new vendorModel.mongoose.Types.ObjectId(vendorId)})
+
+            if(!vendor)
+                return reject({message:null,error:"Invalid vendor ID",code:404,data:null})
+
+            await vendor.delete()
+
+            return resolve(vendorId)
+            
+        }catch(e){
+            return reject({message:"Undetected error",error:e.message,code:500,data:null})
+        }
+    })
+}
