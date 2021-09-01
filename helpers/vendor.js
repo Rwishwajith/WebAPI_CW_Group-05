@@ -3,6 +3,8 @@
 30.08.2021        Sandaruwani Weerasinghe   get all for vendors.
 30.08.2021        Deshani Rajapaksha        Created a POST Method for Add New Vendor.
 01.08.2021        Pabasara Illangasekara    Created Delete vendor method
+01.08.2021        Pabasara Illangasekara    Created Delete vendors method
+
 */
 
 function getAll(){
@@ -16,9 +18,6 @@ function getAll(){
         }
     })
 }
-
-
-
 
 function addNewVendor(data){
     return new Promise(async(resolve,reject)=>{
