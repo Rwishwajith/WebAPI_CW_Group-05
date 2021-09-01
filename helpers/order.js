@@ -8,6 +8,9 @@
 30.08.2021        Ruchira Wishwajith        Added function to updateOne(data)
 30.08.2021        Ruchira Wishwajith        Code Refctoring
 31.08.2021        Ruchira Wishwajith        Exported the functions
+01.09.2021        Pabasara Illangasekara    Added Delete All Method
+01.09.2021        Pabasara Illangasekara    Added Delete One Method
+01.09.2021        Ruchira Wishwajith        Added exporte exports.deleteAll = deleteAll and exports.deleteOne = deleteOne 
 
 */
 const orderModel = require('../models/order')
@@ -234,3 +237,4 @@ exports.getOneForUser=getOneForUser
 exports.getOne = getOne
 exports.addOne = addOne
 exports.updateOne = updateOne
+exports.deleteOne = deleteOne
