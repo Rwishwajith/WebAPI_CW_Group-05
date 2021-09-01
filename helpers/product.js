@@ -5,7 +5,14 @@
 30.08.2021        Deshani Rajapaksha        Created a POST method for Add One Function.
 31.08.2021        Sandaruwani Weerasinghe   Created get all method for product.
 01.09.2021        Ruchira Wishwajith        Created Updateone(PUT) function
+01.09.2021        Ruchira Wishwajith        Added relationships to models
+01.09.2021        Pabasara Illangasekara    Added deleteall and deleteone methods
+01.09.2021        Ruchira WIshwajith        Exported the methods
 */
+const gcs = require('../services/gcs')
+const productModel = require('../models/product')
+const productImageModel = require('../models/productImage')
+const gcsRef = new gcs.GCS()
 
 
 function getForVendor(vendorId){
@@ -208,3 +215,10 @@ function deleteOne(productId){
         }
     })
 }
+exports.getAll = getAll
+exports.getOne = getOne
+exports.addOne = addOne
+exports.updateOne = updateOne
+exports.deleteAll = deleteAll
+exports.deleteOne = deleteOne
+exports.getForVendor=getForVendor
