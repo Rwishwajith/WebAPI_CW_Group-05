@@ -59,3 +59,17 @@ function deleteVendor(vendorId){
         }
     })
 }
+
+
+function deleteVendors(){
+    return new Promise(async(resolve,reject)=>{
+        try{
+            await vendorModel.Vendor.deleteMany()
+
+            return resolve(true)
+            
+        }catch(e){
+            return reject({message:"Undetected error",error:e.message,code:500,data:null})
+        }
+    })
+}
