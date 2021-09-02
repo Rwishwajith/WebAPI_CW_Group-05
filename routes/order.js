@@ -9,6 +9,7 @@
 02.09.2021        Pabasara Illanagasekara   Added deleted methods
 02.09.2021        Ruchira Wishwajith        Added relatonships to helper/middleware/utils
 02.09.2021        Ruchira Wishwajith        Added retrun method and code refactoring
+02.09.2021        Ruchira Wishwajith        Deleted wrong build method 
 */
 
 const order = require('../helpers/order')
@@ -176,17 +177,7 @@ module.exports = (()=>{
         }
     })
 
-    routes.delete('/',jwtMiddleware,checkAdminPermissions,(request, respond)=>{
-        try{
-            order.deleteAll().then((result)=>{
-                return respond.status(200).send({success:true,message:'All orders successfully deleted',error:null,code:200,data:result})
-            }).catch((e)=>{
-                return respond.status(200).send({success:false,message:e.message,error:e.error,code:e.code,data:e.data})
-            })
-        }catch(e){
-            return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,code:500,data:null})
-        }
-    })
+
 
     return routes
 })()
