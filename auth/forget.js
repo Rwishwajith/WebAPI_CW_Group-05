@@ -6,9 +6,7 @@
 
 const otpModel = require('../models/otp')
 const userModel = require('../models/user')
-
 const adminAuth = require('../services/firebase').getAdminAuth()
-
 const jwt = require('../utils/jwt')
 
 module.exports=((otpId,rawPassword)=>{
