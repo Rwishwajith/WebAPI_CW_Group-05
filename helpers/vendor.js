@@ -2,7 +2,16 @@
 29.08.2021        Ruchira Wishwajith        Created the file.
 30.08.2021        Sandaruwani Weerasinghe   get all for vendors.
 30.08.2021        Deshani Rajapaksha        Created a POST Method for Add New Vendor.
+01.08.2021        Pabasara Illangasekara    Created Delete vendor method
+01.08.2021        Pabasara Illangasekara    Created Delete vendors method
+02.08.2021        Ruchira Wishwajith        Added relationships with models
+02.08.2021        Ruchira Wishwajith        Exported the functions
 */
+
+
+const gcs = require('../services/gcs')
+const vendorModel = require('../models/vendor')
+const gcsRef = new gcs.GCS()
 
 function getAll(){
     return new Promise(async(resolve,reject)=>{
@@ -15,9 +24,6 @@ function getAll(){
         }
     })
 }
-
-
-
 
 function addNewVendor(data){
     return new Promise(async(resolve,reject)=>{
@@ -73,3 +79,10 @@ function deleteVendors(){
         }
     })
 }
+
+
+exports.getAll = getAll
+exports.addNewVendor = addNewVendor
+exports.deleteVendor = deleteVendor
+exports.deleteVendors = deleteVendors
+
