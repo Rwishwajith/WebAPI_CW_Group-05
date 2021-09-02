@@ -171,3 +171,49 @@ module.exports = (()=>{
     return routes
 
 })()
+routes.post('/register/admin',jwtMiddleware,checkAdminPermissions,(request, respond)=>{
+    try{
+
+        let data = {
+            email:request.body.email,
+            password:request.body.password,
+            passwordConfirm:request.body.passwordConfirm,
+            firstName:request.body.firstName,
+            lastName:request.body.lastName,
+            countryCode:request.body.countryCode,
+            mobileNumber:request.body.mobileNumber,
+            address:request.body.address,
+            isSocial:request.body.isSocial,
+            type:1
+        }
+
+        if(!validator.validateEmptyFields(data.email,data.password,data.passwordConfirm,data.firstName,data.lastName,data.address,data.isSocial))
+            return respond.status(200).send({success:false,message:'Missing or empty required fields',error:null,code:400,data:null})
+
+        if(!validator.validateEmail(data.email))
+            return respond.status(200).send({success:false,message:'Provided email is not valid',error:null,code:400,data:null})
+
+        if(data.mobileNumber){
+            validator.validateMobileNumber(data.mobileNumber,data.countryCode).then((res)=>{
+                data.mobileNumber=res.data
+            }).catch((e)=>{
+                return respond.status(200).send({success:false,message:e.message,error:e.error,code:e.code,data:e.data})
+            })
+        }
+        
+        if(!validator.validateConfirmPassword(data.password,data.passwordConfirm))
+            return respond.status(200).send({success:false,message:'Passwords not matching',error:null,code:400,data:null})
+
+        if(!validator.validatePassword(data.password))
+            return respond.status(200).send({success:false,message:'Password mot matching security criteria',error:null,code:400,data:null})
+        
+        register(data).then((result)=>{
+            return respond.status(200).send({success:true,message:'Admin user successfully registered',error:null,code:200,data:data})
+        }).catch((e)=>{
+            return respond.status(200).send({success:false,message:e.message,error:e.error,code:e.code,data:e.data})
+        })
+    }catch(e){
+        return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,code:500,data:null})
+    }
+})
+
