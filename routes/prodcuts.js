@@ -8,8 +8,15 @@
 29.08.2021        sandaruwani Weerasinghe   Get all method for product
 31.08.2021        Ruchira Wishwajith        Created GET(ID) method
 31.08.2021        Ruchira Wishwajith        Created (PUT) method for update products
+02.09.2021        Pabasara Illangaseakar    Added Delete method
+02.09.2021        Ruchira Wishwajith        Added relatonships to helper/middleware/utils
 */
 
+const product = require('../helpers/product')
+const jwtMiddleware = require('../middlewares/jwt').checkJWT
+const checkAdminPermissions = require('../middlewares/permissionCheck').checkAdminPermissions
+const upload = require('../middlewares/multer').uploadMulter
+const validator = require('../utils/validators')
 
 module.exports = (()=>{
     let routes = require('express').Router()
@@ -182,6 +189,20 @@ module.exports = (()=>{
             return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,code:500,data:null})
         }
     })
+
+    routes.delete('/',jwtMiddleware,checkAdminPermissions,(request, respond)=>{
+        try{
+            product.deleteAll().then((result)=>{
+                return respond.status(200).send({success:true,message:'All Products successfully deleted',error:null,code:200,data:result})
+            }).catch((e)=>{
+                return respond.status(200).send({success:false,message:e.message,error:e.error,code:e.code,data:e.data})
+            })
+        }catch(e){
+            return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,code:500,data:null})
+        }
+    })
+
+
 
     return routes
 })()  
