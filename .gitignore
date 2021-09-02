@@ -1,0 +1,2 @@
+#gitignore the node module files
+node_modules/
