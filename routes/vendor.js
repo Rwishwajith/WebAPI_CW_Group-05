@@ -56,3 +56,15 @@ routes.delete('/:id',jwtMiddleware,checkAdminPermissions,(request, respond)=>{
         return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,data:null})
     }
 })
+
+routes.delete('/',jwtMiddleware,checkAdminPermissions,(request, respond)=>{
+    try{
+        vendor.deleteVendors().then((products)=>{
+            return respond.status(200).send({success:true,message:'All vendors successfully deleted',error:null,code:200,data:products})
+        }).catch((e)=>{
+            return respond.status(200).send({success:false,message:e.message,error:e.error,code:e.code,data:e.data})
+        })
+    }catch(e){
+        return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,data:null})
+    }
+})
