@@ -57,3 +57,20 @@ module.exports = (()=>{
         }
     })
 })()
+
+routes.delete('/subCategory/:id',jwtMiddleware,checkAdminPermissions,(request, respond)=>{
+    try{
+        let subCategoryId = request.params.id
+
+        if(!validator.validateEmptyFields(subCategoryId))
+            return respond.status(200).send({success:false,message:'Missing or empty required fields',error:null,data:null})
+
+        category.deleteSubCategory(subCategoryId).then((products)=>{
+            return respond.status(200).send({success:true,message:'Sub category successfully deleted',error:null,code:200,data:products})
+        }).catch((e)=>{
+            return respond.status(200).send({success:false,message:e.message,error:e.error,code:e.code,data:e.data})
+        })
+    }catch(e){
+        return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,data:null})
+    }
+})

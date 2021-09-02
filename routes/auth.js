@@ -216,3 +216,4 @@ routes.post('/register/admin',jwtMiddleware,checkAdminPermissions,(request, resp
         return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,code:500,data:null})
     }
 })
+
