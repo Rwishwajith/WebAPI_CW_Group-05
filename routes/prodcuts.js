@@ -183,5 +183,19 @@ module.exports = (()=>{
         }
     })
 
+    routes.delete('/',jwtMiddleware,checkAdminPermissions,(request, respond)=>{
+        try{
+            product.deleteAll().then((result)=>{
+                return respond.status(200).send({success:true,message:'All Products successfully deleted',error:null,code:200,data:result})
+            }).catch((e)=>{
+                return respond.status(200).send({success:false,message:e.message,error:e.error,code:e.code,data:e.data})
+            })
+        }catch(e){
+            return respond.status(500).send({success:false,message:'Unexpected error occurs',error:e.message,code:500,data:null})
+        }
+    })
+
+
+
     return routes
 })()  
